@@ -1,12 +1,15 @@
-#!/usr/bin/python
 # -*- coding: UTF-8 -*-
+#输出数据写入CSV文件
+import csv
+data = [
+    ("Mike", "male", 24),
+    ("Lee", "male", 26),
+    ("Joy", "female", 22)
+]
 
-# 定义函数
-class Networkerror(RuntimeError):
-    def __init__(self, arg):
-        self.args = arg
-
-try:
-        raise Networkerror("Bad hostname")
-except Networkerror, e:
-        print e.args
+#Python3.4以后的新方式，解决空行问题
+with open('test.csv', 'w') as csv_file:
+    csv_writer = csv.writer(csv_file)
+    for list in data:
+        print(list)
+        csv_writer.writerow(list)
