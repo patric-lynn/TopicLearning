@@ -17,7 +17,7 @@ def res_count(url):         #采集结果数函数
         html = html.encode('utf-8')
         count = re.search('找到约 (.+?) 条结果',html,re.S)
     return count.group(1)
-with open('countvid.txt','w') as f:
+with open('countvid2.txt','w') as f:
     with  open('kwd.txt', 'r') as f1:
         content = f1.readlines()
         for i in content:
