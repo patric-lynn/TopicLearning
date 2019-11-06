@@ -5,7 +5,7 @@
       <paths name="lynn@202.117.54.73:7222">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/home/lynn/pycharm/TopicLearning" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
