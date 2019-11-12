@@ -10,12 +10,8 @@ class WikiCategorySpider(scrapy.Spider):
     start_urls = ["https://en.wikipedia.org/wiki/Category:Computer_programming"]
 
     def parse(self, response):
-        filename = response.url + '.html'
-        with open(filename,'wb')as f:
-            f.write(response.body)
-
         for a in response.xpath('//li'):
-            item = WikiscrapyItem.subtitle
+            item = WikiscrapyItem()
             item['subtitle'] = a.xpath('a/text()').extract()
-            item['link'] = "https://en.wikipedia.org/" + a.xpath('a/@href').extract()
+            item['link'] = a.xpath('a/@href').extract()
             yield item
